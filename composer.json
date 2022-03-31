@@ -1,6 +1,6 @@
 {
-  "name": "jascha030/composer-template",
-  "description": "Template repo for creating composer projects",
+  "name": "jascha030/config",
+  "description": "Service to help create config directories and files for CLI apps.",
   "license": "MIT",
   "type": "project",
   "authors": [
@@ -11,17 +11,17 @@
   ],
   "autoload": {
     "psr-4": {
-      "Jascha030\\ComposerTemplate\\": "src/"
+      "Jascha030\\Config\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Jascha030\\ComposerTemplate\\Tests\\": "tests/"
+      "Jascha030\\Config\\Tests\\": "tests/"
     }
   },
   "minimum-stability": "stable",
   "require": {
-    "php": "^8.0"
+    "php": "^8.1"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest",
