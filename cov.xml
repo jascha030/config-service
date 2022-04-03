@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1649018415">
-  <project timestamp="1649018415">
+<coverage generated="1649019592">
+  <project timestamp="1649019592">
     <file name="/Users/jaschavanaalst/.development/Projects/Composer/Services/config-service/src/Config/ConfigDefinitionInterface.php">
       <metrics loc="15" ncloc="15" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
     </file>

@@ -13,8 +13,8 @@ class PathIterator implements \IteratorAggregate
     public function __construct(string $directory, array $paths)
     {
         $this->factory = (static function () use ($directory, $paths) {
-            foreach ($paths as $name => $path) {
-                yield $directory . '/' . $path;
+            foreach ($paths as $path           => $contents) {
+                yield $directory . '/' . $path => $contents;
             }
         })(...);
     }

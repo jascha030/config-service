@@ -40,11 +40,16 @@ final class PathIteratorTest extends TestCase
      */
     public function testGetIterator(): void
     {
-        $paths     = ['path1', 'path2'];
+        $paths     = ['path1' => 'content1', 'path2' => 'content2'];
         $aggregate = new PathIterator(self::$configPath, $paths);
-        $array     = iterator_to_array($aggregate);
+        $array     = iterator_to_array($aggregate, true);
 
         $this->assertEquals($array, iterator_to_array($aggregate->getIterator()));
-        $this->assertEquals(reset($array), sprintf('%s/%s', self::$configPath, $paths[0]));
+
+        foreach ($paths as $key => $value) {
+            $path = sprintf('%s/%s', self::$configPath, $key);
+            $this->assertArrayHasKey($path, $array);
+            $this->assertEquals($array[$path], $value);
+        }
     }
 }
