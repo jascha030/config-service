@@ -10,5 +10,5 @@ interface ConfigDefinitionInterface
 {
     public function getName(): string;
 
-    public function getPaths(): ConfigIterator;
+    public function getFiles(): ConfigIterator;
 }
