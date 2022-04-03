@@ -9,7 +9,7 @@
         testdox="true"
 >
     <php>
-        <env name="HOME" value="tests/Fixtures/home/" />
+        <env name="HOME" value="./tests/Fixtures/home" force="true" />
     </php>
     <coverage processUncoveredFiles="true">
         <include>
