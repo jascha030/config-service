@@ -29,10 +29,7 @@ final class ConfigIteratorTest extends TestCase
 
     public function testConstruct(): void
     {
-        $this->assertInstanceOf(
-            IteratorAggregate::class,
-            new ConfigIterator(self::$configPath, [])
-        );
+        $this->assertInstanceOf(IteratorAggregate::class, new ConfigIterator([]));
     }
 
     /**
@@ -40,16 +37,16 @@ final class ConfigIteratorTest extends TestCase
      */
     public function testGetIterator(): void
     {
-        $paths     = ['path1' => 'content1', 'path2' => 'content2'];
-        $aggregate = new ConfigIterator(self::$configPath, $paths);
+        $paths = ['path1' => 'content1', 'path2' => 'content2'];
+
+        $aggregate = new ConfigIterator($paths);
         $array     = iterator_to_array($aggregate, true);
 
         $this->assertEquals($array, iterator_to_array($aggregate->getIterator()));
 
         foreach ($paths as $key => $value) {
-            $path = sprintf('%s/%s', self::$configPath, $key);
-            $this->assertArrayHasKey($path, $array);
-            $this->assertEquals($array[$path], $value);
+            $this->assertArrayHasKey($key, $array);
+            $this->assertEquals($array[$key], $value);
         }
     }
 }

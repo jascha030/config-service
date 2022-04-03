@@ -10,13 +10,9 @@ class ConfigIterator implements \IteratorAggregate
 {
     private \Closure $factory;
 
-    public function __construct(string $directory, array $paths)
+    public function __construct(array $paths)
     {
-        $this->factory = (static function () use ($directory, $paths) {
-            foreach ($paths as $path           => $contents) {
-                yield $directory . '/' . $path => $contents;
-            }
-        })(...);
+        $this->factory = (static fn (): \Generator => yield from $paths)(...);
     }
 
     public function getIterator(): Traversable
