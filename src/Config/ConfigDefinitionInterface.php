@@ -6,7 +6,7 @@ namespace Jascha030\Config\Config;
 
 interface ConfigDefinitionInterface
 {
-    public function getName();
+    public function getName(): string;
 
-    public function getFiles();
+    public function getPaths(): array;
 }
