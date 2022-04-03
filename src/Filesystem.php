@@ -32,11 +32,10 @@ class Filesystem
             $this->filesystem->mkdir($directoryPath);
         }
 
-        foreach ($definition->getPaths() as $name => $path) {
-
-
+        foreach ($definition->getFiles() as $path => $contents) {
             if (! $this->filesystem->exists($path)) {
                 $this->filesystem->touch($path);
+                $this->filesystem->dumpFile($path, $contents);
             }
         }
     }

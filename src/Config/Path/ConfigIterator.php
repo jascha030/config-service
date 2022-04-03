@@ -6,7 +6,7 @@ namespace Jascha030\Config\Config\Path;
 
 use Traversable;
 
-class PathIterator implements \IteratorAggregate
+class ConfigIterator implements \IteratorAggregate
 {
     private \Closure $factory;
 

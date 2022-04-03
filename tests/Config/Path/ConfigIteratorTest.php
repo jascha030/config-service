@@ -6,14 +6,14 @@ namespace Jascha030\Config\Tests\Config\Path;
 
 use Exception;
 use IteratorAggregate;
-use Jascha030\Config\Config\Path\PathIterator;
+use Jascha030\Config\Config\Path\ConfigIterator;
 use PHPUnit\Framework\TestCase;
 
 /**
  * @internal
- * @covers \Jascha030\Config\Config\Path\PathIterator
+ * @covers \Jascha030\Config\Config\Path\ConfigIterator
  */
-final class PathIteratorTest extends TestCase
+final class ConfigIteratorTest extends TestCase
 {
     public static ?string $configPath = null;
 
@@ -31,7 +31,7 @@ final class PathIteratorTest extends TestCase
     {
         $this->assertInstanceOf(
             IteratorAggregate::class,
-            new PathIterator(self::$configPath, [])
+            new ConfigIterator(self::$configPath, [])
         );
     }
 
@@ -41,7 +41,7 @@ final class PathIteratorTest extends TestCase
     public function testGetIterator(): void
     {
         $paths     = ['path1' => 'content1', 'path2' => 'content2'];
-        $aggregate = new PathIterator(self::$configPath, $paths);
+        $aggregate = new ConfigIterator(self::$configPath, $paths);
         $array     = iterator_to_array($aggregate, true);
 
         $this->assertEquals($array, iterator_to_array($aggregate->getIterator()));
