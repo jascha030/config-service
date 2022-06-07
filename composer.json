@@ -2,7 +2,7 @@
   "name": "jascha030/config",
   "description": "Service to help create config directories and files for CLI apps.",
   "license": "MIT",
-  "type": "project",
+  "type": "composer-plugin",
   "authors": [
     {
       "name": "Jascha030",
@@ -22,6 +22,7 @@
   "minimum-stability": "stable",
   "require": {
     "php": "^8.0|^8.1",
+    "composer-plugin-api": "^2.0",
     "symfony/filesystem": "^6.0",
     "symfony/finder": "^6.0",
     "symfony/console": "^6.0",
@@ -33,7 +34,8 @@
     "friendsofphp/php-cs-fixer": "^3.8",
     "phpunit/phpunit": "^9.5",
     "jascha030/phpunit-config": "^1.0",
-    "jascha030/php-cs-config": "^1.0"
+    "jascha030/php-cs-config": "^1.0",
+    "composer/composer": "^2.3"
   },
   "scripts": {
     "phpunit": "phpunit -c phpunit.xml",
