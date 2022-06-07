@@ -1,24 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1649019592">
-  <project timestamp="1649019592">
+<coverage generated="1649022365">
+  <project timestamp="1649022365">
     <file name="/Users/jaschavanaalst/.development/Projects/Composer/Services/config-service/src/Config/ConfigDefinitionInterface.php">
       <metrics loc="15" ncloc="15" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
     </file>
-    <file name="/Users/jaschavanaalst/.development/Projects/Composer/Services/config-service/src/Config/Path/PathIterator.php">
-      <class name="Jascha030\Config\Config\Path\PathIterator" namespace="global">
-        <metrics complexity="3" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="6" coveredelements="6"/>
+    <file name="/Users/jaschavanaalst/.development/Projects/Composer/Services/config-service/src/Config/Path/ConfigIterator.php">
+      <class name="Jascha030\Config\Config\Path\ConfigIterator" namespace="global">
+        <metrics complexity="2" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="4" coveredelements="4"/>
       </class>
-      <line num="13" type="method" name="__construct" visibility="public" complexity="2" crap="2" count="2"/>
+      <line num="13" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="2"/>
       <line num="15" type="stmt" count="2"/>
-      <line num="16" type="stmt" count="1"/>
-      <line num="17" type="stmt" count="1"/>
-      <line num="22" type="method" name="getIterator" visibility="public" complexity="1" crap="1" count="1"/>
-      <line num="24" type="stmt" count="1"/>
-      <metrics loc="27" ncloc="27" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="6" coveredelements="6"/>
+      <line num="18" type="method" name="getIterator" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="20" type="stmt" count="1"/>
+      <metrics loc="23" ncloc="23" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="4" coveredelements="4"/>
+    </file>
+    <file name="/Users/jaschavanaalst/.development/Projects/Composer/Services/config-service/src/Config/Traits/ConsoleApplicationConfigTrait.php">
+      <class name="Jascha030\Config\Config\Traits\ConsoleApplicationConfigTrait" namespace="global">
+        <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
+      </class>
+      <line num="13" type="method" name="getName" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="15" type="stmt" count="1"/>
+      <metrics loc="18" ncloc="18" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
+    </file>
+    <file name="/Users/jaschavanaalst/.development/Projects/Composer/Services/config-service/src/Config/Traits/TemplateDirectoryTrait.php">
+      <class name="Jascha030\Config\Config\Traits\TemplateDirectoryTrait" namespace="global">
+        <metrics complexity="4" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="0" elements="15" coveredelements="0"/>
+      </class>
+      <line num="19" type="method" name="getFiles" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="21" type="stmt" count="0"/>
+      <line num="22" type="stmt" count="0"/>
+      <line num="23" type="stmt" count="0"/>
+      <line num="30" type="method" name="getPaths" visibility="private" complexity="2" crap="6" count="0"/>
+      <line num="32" type="stmt" count="0"/>
+      <line num="34" type="stmt" count="0"/>
+      <line num="35" type="stmt" count="0"/>
+      <line num="37" type="stmt" count="0"/>
+      <line num="40" type="stmt" count="0"/>
+      <line num="44" type="method" name="getFinder" visibility="private" complexity="1" crap="2" count="0"/>
+      <line num="46" type="stmt" count="0"/>
+      <line num="47" type="stmt" count="0"/>
+      <line num="48" type="stmt" count="0"/>
+      <line num="49" type="stmt" count="0"/>
+      <metrics loc="52" ncloc="48" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="0" elements="15" coveredelements="0"/>
     </file>
     <file name="/Users/jaschavanaalst/.development/Projects/Composer/Services/config-service/src/Filesystem.php">
       <class name="Jascha030\Config\Filesystem" namespace="global">
-        <metrics complexity="7" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="0" elements="14" coveredelements="0"/>
+        <metrics complexity="7" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="16" coveredstatements="0" elements="19" coveredelements="0"/>
       </class>
       <line num="15" type="method" name="__construct" visibility="public" complexity="2" crap="6" count="0"/>
       <line num="20" type="stmt" count="0"/>
@@ -29,12 +56,17 @@
       <line num="31" type="stmt" count="0"/>
       <line num="32" type="stmt" count="0"/>
       <line num="35" type="stmt" count="0"/>
-      <line num="38" type="stmt" count="0"/>
+      <line num="36" type="stmt" count="0"/>
       <line num="39" type="stmt" count="0"/>
-      <line num="44" type="method" name="getConfigDir" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="46" type="stmt" count="0"/>
-      <metrics loc="49" ncloc="49" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="0" elements="14" coveredelements="0"/>
+      <line num="40" type="stmt" count="0"/>
+      <line num="41" type="stmt" count="0"/>
+      <line num="43" type="stmt" count="0"/>
+      <line num="44" type="stmt" count="0"/>
+      <line num="45" type="stmt" count="0"/>
+      <line num="50" type="method" name="getConfigDir" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="52" type="stmt" count="0"/>
+      <metrics loc="55" ncloc="55" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="16" coveredstatements="0" elements="19" coveredelements="0"/>
     </file>
-    <metrics files="3" loc="91" ncloc="91" classes="2" methods="5" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="15" coveredstatements="4" elements="20" coveredelements="6"/>
+    <metrics files="5" loc="163" ncloc="159" classes="4" methods="9" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="31" coveredstatements="3" elements="40" coveredelements="6"/>
   </project>
 </coverage>
