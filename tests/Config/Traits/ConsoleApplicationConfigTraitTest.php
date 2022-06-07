@@ -9,8 +9,9 @@ use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Application;
 
 /**
- * @internal
  * @covers \Jascha030\Config\Config\Traits\ConsoleApplicationConfigTrait
+ *
+ * @internal
  */
 final class ConsoleApplicationConfigTraitTest extends TestCase
 {
@@ -21,6 +22,7 @@ final class ConsoleApplicationConfigTraitTest extends TestCase
     public function testGetName(): void
     {
         $mock = $this->createConsoleApplicationConfigTraitMock();
+
         $this->assertEquals(self::$appName, $mock->getName());
     }
 
