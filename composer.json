@@ -19,6 +19,9 @@
       "Jascha030\\Config\\Tests\\": "tests/"
     }
   },
+  "extra": {
+    "class": "Jascha030\\Config\\Composer\\Plugin\\ConfigDirectoryPlugin"
+  },
   "minimum-stability": "stable",
   "require": {
     "php": "^8.0|^8.1",
