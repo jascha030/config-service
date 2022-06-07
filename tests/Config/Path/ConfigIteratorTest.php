@@ -15,17 +15,10 @@ use PHPUnit\Framework\TestCase;
  */
 final class ConfigIteratorTest extends TestCase
 {
-    public static ?string $configPath = null;
-
-    public static function setUpBeforeClass(): void
-    {
-        self::$configPath = sprintf('%s/.config', getenv('HOME'));
-    }
-
-    public static function tearDownAfterClass(): void
-    {
-        self::$configPath = null;
-    }
+    private static array $paths = [
+        'path1' => 'content1',
+        'path2' => 'content2',
+    ];
 
     public function testConstruct(): void
     {
@@ -37,14 +30,12 @@ final class ConfigIteratorTest extends TestCase
      */
     public function testGetIterator(): void
     {
-        $paths = ['path1' => 'content1', 'path2' => 'content2'];
-
-        $aggregate = new ConfigIterator($paths);
+        $aggregate = new ConfigIterator(self::$paths);
         $array     = iterator_to_array($aggregate, true);
 
         $this->assertEquals($array, iterator_to_array($aggregate->getIterator()));
 
-        foreach ($paths as $key => $value) {
+        foreach (self::$paths as $key => $value) {
             $this->assertArrayHasKey($key, $array);
             $this->assertEquals($array[$key], $value);
         }
