@@ -18,15 +18,9 @@ trait TemplateDirectoryTrait
 
     public function getFiles(): ConfigIterator
     {
-        return new ConfigIterator(
-            $this->getName(),
-            iterator_to_array($this->getPaths())
-        );
+        return new ConfigIterator(iterator_to_array($this->getPaths()));
     }
 
-    /**
-     * @noinspection PhpUnnecessaryLocalVariableInspection
-     */
     private function getPaths(): Generator
     {
         foreach ($this->getFinder() as $file) {
