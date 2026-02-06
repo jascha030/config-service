@@ -8,11 +8,14 @@ use Jascha030\Config\Config\ConfigDefinitionInterface;
 use Jascha030\Config\Config\Path\ConfigIterator;
 use Jascha030\Config\Filesystem;
 use PHPUnit\Framework\TestCase;
+use SplFileInfo;
 use Symfony\Component\String\Slugger\AsciiSlugger;
+
 use function PHPUnit\Framework\assertDirectoryDoesNotExist;
 use function PHPUnit\Framework\assertDirectoryExists;
 use function PHPUnit\Framework\assertEquals;
 use function PHPUnit\Framework\assertInstanceOf;
+use function sprintf;
 
 /**
  * @covers \Jascha030\Config\Filesystem
@@ -23,7 +26,7 @@ class FilesystemTest extends TestCase
 {
     private static string $baseConfigDir = __DIR__ . '/Fixtures/home/.config';
 
-    public function tearDown(): void
+    protected function tearDown(): void
     {
         $dir = sprintf('%s/testApp', self::$baseConfigDir);
 
@@ -73,7 +76,7 @@ class FilesystemTest extends TestCase
 
     private function getConfigDefinition(): ConfigDefinitionInterface
     {
-        return new class () implements ConfigDefinitionInterface {
+        return new class implements ConfigDefinitionInterface {
             public function getName(): string
             {
                 return 'testApp';
@@ -85,7 +88,7 @@ class FilesystemTest extends TestCase
                 $files = [];
 
                 foreach ($paths as $path) {
-                    $info = new \SplFileInfo($path);
+                    $info = new SplFileInfo($path);
 
                     $files[$info->getBasename()] = file_get_contents($info->getRealPath());
                 }

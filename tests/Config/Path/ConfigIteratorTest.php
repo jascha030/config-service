@@ -11,6 +11,7 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * @internal
+ *
  * @covers \Jascha030\Config\Config\Path\ConfigIterator
  */
 final class ConfigIteratorTest extends TestCase

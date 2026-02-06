@@ -29,30 +29,18 @@ class ConfigDirectoryPlugin implements PluginInterface, EventSubscriberInterface
 {
     private array $packageQueue = [];
 
-    /**
-     * {@inheritDoc}
-     */
     public function activate(Composer $composer, IOInterface $io): void
     {
     }
 
-    /**
-     * {@inheritDoc}
-     */
     public function deactivate(Composer $composer, IOInterface $io): void
     {
     }
 
-    /**
-     * {@inheritDoc}
-     */
     public function uninstall(Composer $composer, IOInterface $io): void
     {
     }
 
-    /**
-     * {@inheritDoc}
-     */
     public static function getSubscribedEvents(): array
     {
         $callback = ['packageConfigHandler', 0];
@@ -120,7 +108,7 @@ class ConfigDirectoryPlugin implements PluginInterface, EventSubscriberInterface
 
         var_dump($package->getName());
 
-        exit();
+        exit;
 
         $definition    = new $extra['dot-config']();
         $rootConfigDir = $extra['dot-config-root'] ?? null;

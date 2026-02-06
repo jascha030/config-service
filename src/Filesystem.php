@@ -9,6 +9,8 @@ use Jascha030\Config\Config\ConfigDefinitionInterface;
 use Symfony\Component\Filesystem\Filesystem as BaseFilesystem;
 use Symfony\Component\String\Slugger\SluggerInterface;
 
+use function sprintf;
+
 class Filesystem
 {
     private string $baseConfigDir;

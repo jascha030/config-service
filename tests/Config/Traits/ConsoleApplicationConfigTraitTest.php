@@ -28,7 +28,7 @@ final class ConsoleApplicationConfigTraitTest extends TestCase
 
     private function createConsoleApplicationConfigTraitMock(): object
     {
-        return new class ((new Application(self::$appName, self::$appVersion))) {
+        return new class (new Application(self::$appName, self::$appVersion)) {
             use ConsoleApplicationConfigTrait;
 
             public function __construct(private Application $application)
