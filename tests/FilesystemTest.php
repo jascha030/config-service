@@ -7,6 +7,8 @@ namespace Jascha030\Config\Tests;
 use Jascha030\Config\Config\ConfigDefinitionInterface;
 use Jascha030\Config\Config\Path\ConfigIterator;
 use Jascha030\Config\Filesystem;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\Depends;
 use PHPUnit\Framework\TestCase;
 use SplFileInfo;
 use Symfony\Component\String\Slugger\AsciiSlugger;
@@ -18,10 +20,9 @@ use function PHPUnit\Framework\assertInstanceOf;
 use function sprintf;
 
 /**
- * @covers \Jascha030\Config\Filesystem
- *
  * @internal
  */
+#[CoversClass(Filesystem::class)]
 class FilesystemTest extends TestCase
 {
     private static string $baseConfigDir = __DIR__ . '/Fixtures/home/.config';
@@ -48,9 +49,7 @@ class FilesystemTest extends TestCase
         return $fs;
     }
 
-    /**
-     * @depends testConstruct
-     */
+    #[Depends('testConstruct')]
     public function testCreateFromDefinition(Filesystem $filesystem): void
     {
         $dir = sprintf('%s/testApp', self::$baseConfigDir);
@@ -66,9 +65,7 @@ class FilesystemTest extends TestCase
         assertDirectoryExists($dir);
     }
 
-    /**
-     * @depends testConstruct
-     */
+    #[Depends('testConstruct')]
     public function testGetConfigDir(Filesystem $filesystem): void
     {
         assertEquals(self::$baseConfigDir, $filesystem->getConfigDir());
