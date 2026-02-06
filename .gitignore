@@ -1,19 +1,32 @@
-# Intellij IDE's
-/.idea/
+### Default project gitignore
 
-# VS Code
+## IDE Projectfiles
+/.idea/
 /.vscode/
 
-# Composer
-/vendor/
+## Dynamic
+/.var/
 
-# NodeJS
-/node_modules/
+/temp/
+/tmp/
 /dist/
+/build/
+/**.cache
+/bin/**/*.txt
 
-# MacOS
-*.DS_Store
-.DS_Store
+## Library
+vendor
+/node_modules/
+/tools/*
+!/tools/.phpactor.schema.json
 
-# Other
-**.cache
+## Env
+/.env
+/auth.json
+/.pm.toml
+
+## Other
+/*.DS_Store
+/.DS_Store
+/*.sql
+/TODO.md
