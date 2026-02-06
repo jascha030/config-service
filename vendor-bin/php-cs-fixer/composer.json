@@ -1,0 +1,7 @@
+{
+    "require-dev": {
+        "php": ">=8.3",
+        "friendsofphp/php-cs-fixer": "^3.93",
+        "jascha030/php-cs-fixer-config": "^1.0"
+    }
+}
