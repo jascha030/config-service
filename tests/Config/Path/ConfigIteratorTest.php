@@ -7,12 +7,13 @@ namespace Jascha030\Config\Tests\Config\Path;
 use Exception;
 use IteratorAggregate;
 use Jascha030\Config\Config\Path\ConfigIterator;
+use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
 
 /**
  * @internal
- * @covers \Jascha030\Config\Config\Path\ConfigIterator
  */
+#[CoversClass(ConfigIterator::class)]
 final class ConfigIteratorTest extends TestCase
 {
     private static array $paths = [
