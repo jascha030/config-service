@@ -1,5 +1,5 @@
 {
-  "name": "jascha030/config",
+  "name": "jascha030/dot-config-installer",
   "description": "Service to help create config directories and files for CLI apps.",
   "license": "MIT",
   "type": "composer-plugin",
@@ -19,32 +19,54 @@
       "Jascha030\\Config\\Tests\\": "tests/"
     }
   },
-  "extra": {
-    "class": "Jascha030\\Config\\Composer\\Plugin\\ConfigDirectoryPlugin"
-  },
   "minimum-stability": "stable",
   "require": {
-    "php": "^8.0|^8.1",
-    "composer-plugin-api": "^2.0",
-    "symfony/filesystem": "^6.0",
-    "symfony/finder": "^6.0",
-    "symfony/console": "^6.0",
-    "symfony/string": "^6.0",
-    "symfony/translation-contracts": "^3.0"
+    "php": ">=8.3",
+    "composer-plugin-api": "^2.9",
+    "symfony/filesystem": "^7.0||^8.0",
+    "symfony/finder": "^7.0||^8.0",
+    "symfony/console": "^7.0||^8.0",
+    "symfony/string": "^7.0||^8.0",
+    "symfony/translation-contracts": "*"
   },
   "require-dev": {
-    "roave/security-advisories": "dev-latest",
-    "friendsofphp/php-cs-fixer": "^3.8",
-    "phpunit/phpunit": "^9.5",
-    "jascha030/phpunit-config": "^1.0",
-    "jascha030/php-cs-config": "^1.0",
-    "composer/composer": "^2.3"
+    "bamarni/composer-bin-plugin": "^1.9",
+    "composer/composer": "^2.9",
+    "ergebnis/composer-normalize": "^2.49",
+    "roave/security-advisories": "dev-latest"
   },
   "scripts": {
-    "phpunit": "phpunit -c phpunit.xml",
-    "php-cs-fixer": "php-cs-fixer fix --config=.php-cs-fixer.dist.php",
-    "test": "@phpunit",
-    "format": "@php-cs-fixer",
-    "create-config-files": "pcsconf ./ && puconf ./"
+    "post-install-cmd": [
+      "@install-phive-dependencies"
+    ],
+    "install-phive-dependencies": [
+      "@putenv XDEBUG_MODE=off",
+      "@putenv COMPOSER_ALLOW_SUPERUSER=1",
+      "phive install --trust-gpg-keys 4AA394086372C20A 1> /dev/null",
+      "@php -r \" ! file_exists('tools/phpunit.xsd') && (new Phar('tools/phpunit.phar'))->extractTo('tools', 'phpunit.xsd');\""
+    ],
+    "test": [
+      "@putenv XDEBUG_MODE=coverage",
+      "@php -d error_reporting=E_ALL -d display_errors=1 tools/phpunit.phar -c phpunit.xml"
+    ],
+    "format": "php-cs-fixer fix --config=.php-cs-fixer.dist.php"
+  },
+  "config": {
+    "sort-packages": true,
+    "allow-plugins": {
+      "bamarni/composer-bin-plugin": true,
+      "ergebnis/composer-normalize": true
+    }
+  },
+  "extra": {
+    "class": "Jascha030\\Config\\Composer\\Plugin\\ConfigDirectoryPlugin",
+    "bamarni-bin": {
+      "bin-links": true,
+      "forward-command": true
+    },
+    "composer-normalize": {
+      "indent-size": 4,
+      "indent-style": "space"
+    }
   }
 }
